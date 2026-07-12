@@ -1,0 +1,187 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "izna UNIT A",
+      "apiUrl": "https://www.koreepop.com/products/izna-set-the-tempo-unit-poca-deco-event-in-taipei.json"
+    },
+    {
+      "id": 2,
+      "name": "izna UNIT B",
+      "apiUrl": "https://www.koreepop.com/products/izna-set-the-tempo-unit-poca-deco-event-in-taipei.json"
+    },
+    {
+      "id": 3,
+      "name": "izna TOTAL",
+      "apiUrl": "https://www.koreepop.com/products/izna-set-the-tempo-unit-poca-deco-event-in-taipei.json"
+    }
+  ],
+  "history": {
+    "1": [
+      {
+        "total_sold": 74,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:10:27.994Z"
+      },
+      {
+        "total_sold": 69,
+        "delta": 1,
+        "timestamp": "2026-07-12T15:09:57.814Z"
+      },
+      {
+        "total_sold": 68,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:07:17.831Z"
+      },
+      {
+        "total_sold": 63,
+        "delta": 4,
+        "timestamp": "2026-07-12T15:03:17.718Z"
+      },
+      {
+        "total_sold": 59,
+        "delta": 2,
+        "timestamp": "2026-07-12T15:01:27.649Z"
+      },
+      {
+        "total_sold": 57,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:00:17.645Z"
+      },
+      {
+        "total_sold": 52,
+        "delta": 5,
+        "timestamp": "2026-07-12T14:59:27.638Z"
+      },
+      {
+        "total_sold": 47,
+        "delta": 3,
+        "timestamp": "2026-07-12T14:58:47.881Z"
+      },
+      {
+        "total_sold": 44,
+        "delta": 0,
+        "timestamp": "2026-07-12T14:58:37.589Z"
+      }
+    ],
+    "2": [
+      {
+        "total_sold": 94,
+        "delta": 7,
+        "timestamp": "2026-07-12T15:13:18.106Z"
+      },
+      {
+        "total_sold": 87,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:09:58.200Z"
+      },
+      {
+        "total_sold": 82,
+        "delta": 6,
+        "timestamp": "2026-07-12T15:07:47.864Z"
+      },
+      {
+        "total_sold": 76,
+        "delta": 4,
+        "timestamp": "2026-07-12T15:05:07.791Z"
+      },
+      {
+        "total_sold": 72,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:03:47.823Z"
+      },
+      {
+        "total_sold": 67,
+        "delta": 6,
+        "timestamp": "2026-07-12T15:03:17.758Z"
+      },
+      {
+        "total_sold": 61,
+        "delta": 2,
+        "timestamp": "2026-07-12T15:01:27.691Z"
+      },
+      {
+        "total_sold": 59,
+        "delta": 7,
+        "timestamp": "2026-07-12T15:00:17.687Z"
+      },
+      {
+        "total_sold": 52,
+        "delta": 6,
+        "timestamp": "2026-07-12T14:59:27.680Z"
+      },
+      {
+        "total_sold": 46,
+        "delta": 0,
+        "timestamp": "2026-07-12T14:58:37.628Z"
+      }
+    ],
+    "3": [
+      {
+        "total_sold": 168,
+        "delta": 7,
+        "timestamp": "2026-07-12T15:13:28.005Z"
+      },
+      {
+        "total_sold": 161,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:10:38.064Z"
+      },
+      {
+        "total_sold": 156,
+        "delta": 6,
+        "timestamp": "2026-07-12T15:10:07.976Z"
+      },
+      {
+        "total_sold": 150,
+        "delta": 6,
+        "timestamp": "2026-07-12T15:07:57.906Z"
+      },
+      {
+        "total_sold": 144,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:07:17.917Z"
+      },
+      {
+        "total_sold": 139,
+        "delta": 4,
+        "timestamp": "2026-07-12T15:05:18.111Z"
+      },
+      {
+        "total_sold": 135,
+        "delta": 5,
+        "timestamp": "2026-07-12T15:03:57.815Z"
+      },
+      {
+        "total_sold": 130,
+        "delta": 10,
+        "timestamp": "2026-07-12T15:03:17.794Z"
+      },
+      {
+        "total_sold": 120,
+        "delta": 4,
+        "timestamp": "2026-07-12T15:01:27.738Z"
+      },
+      {
+        "total_sold": 116,
+        "delta": 12,
+        "timestamp": "2026-07-12T15:00:17.732Z"
+      },
+      {
+        "total_sold": 104,
+        "delta": 11,
+        "timestamp": "2026-07-12T14:59:27.722Z"
+      },
+      {
+        "total_sold": 93,
+        "delta": 3,
+        "timestamp": "2026-07-12T14:58:57.680Z"
+      },
+      {
+        "total_sold": 90,
+        "delta": 0,
+        "timestamp": "2026-07-12T14:58:37.666Z"
+      }
+    ]
+  }
+}

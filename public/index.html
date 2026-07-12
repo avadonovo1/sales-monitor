@@ -3,75 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOREEPOP 銷售監控系統</title>
+    <title>KOREEPOP 銷售監控</title>
     <style>
-        body { font-family: "Microsoft JhengHei", Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        h1 { text-align: center; color: #e74c3c; margin-bottom: 20px; }
-        .card { background: white; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .total { font-size: 3.5em; font-weight: bold; text-align: center; color: #2ecc71; margin: 15px 0; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { padding: 12px; text-align: center; border-bottom: 1px solid #eee; }
-        .delta { font-weight: bold; }
-        .time { text-align: right; color: #666; font-size: 0.9em; margin-top: 5px; }
-        button { padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; }
+        body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+        h1 { color: #e74c3c; }
+        pre { background: white; padding: 15px; border-radius: 8px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📊 KOREEPOP 銷售監控系統</h1>
-        <div id="products"></div>
-    </div>
+    <h1>📊 KOREEPOP 銷售監控系統</h1>
+    <pre id="debug">載入中...</pre>
 
     <script>
-        async function loadProducts() {
+        async function test() {
+            const debug = document.getElementById('debug');
             try {
-                const res = await fetch('http://localhost:3000/products');
+                debug.textContent = "正在連接後端...";
+                const res = await fetch('/products');
                 const products = await res.json();
-                const container = document.getElementById('products');
-                container.innerHTML = '';
-
-                for (const p of products) {
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    card.innerHTML = `
-                        <h2>${p.name}</h2>
-                        <div class="total" id="total-${p.id}">-</div>
-                        <div class="time" id="time-${p.id}">更新中...</div>
-                        <table id="table-${p.id}">
-                            <thead><tr><th>時間</th><th>總數</th><th>變化</th></tr></thead>
-                            <tbody></tbody>
-                        </table>
-                    `;
-                    container.appendChild(card);
-                    fetchHistory(p.id);
-                }
+                debug.textContent = JSON.stringify(products, null, 2);
             } catch(e) {
-                console.error('載入失敗', e);
+                debug.textContent = "錯誤: " + e.message;
             }
         }
 
-        async function fetchHistory(productId) {
-            try {
-                const res = await fetch(`http://localhost:3000/history/${productId}`);
-                const history = await res.json();
-                const tbody = document.querySelector(`#table-${productId} tbody`);
-                tbody.innerHTML = history.map(h => `
-                    <tr>
-                        <td>${new Date(h.timestamp).toLocaleString('zh-TW')}</td>
-                        <td><strong>${h.total_sold}</strong></td>
-                        <td class="delta" style="color: ${h.delta > 0 ? '#27ae60' : (h.delta < 0 ? '#e74c3c' : '#95a5a6')}">
-                            ${h.delta > 0 ? '+' : ''}${h.delta}
-                        </td>
-                    </tr>
-                `).join('');
-            } catch(e) {}
-        }
-
-        // 每3秒自動刷新顯示（後端已自動更新）
-        setInterval(loadProducts, 20000);
-
-        window.onload = loadProducts;
+        setInterval(test, 5000);
+        window.onload = test;
     </script>
 </body>
 </html>
