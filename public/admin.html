@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>後台管理</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", Arial, sans-serif; padding: 20px; }
+        input, button { padding: 10px; margin: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>後台管理 - 商品列表</h1>
+
+    <h2>新增商品</h2>
+    <input type="text" id="name" placeholder="商品名稱">
+    <input type="text" id="apiUrl" placeholder="API URL" style="width:400px">
+    <button onclick="addProduct()">新增</button>
+
+    <table id="productTable">
+        <thead><tr><th>ID</th><th>名稱</th><th>API URL</th><th>操作</th></tr></thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        async function loadProducts() {
+            const res = await fetch('http://localhost:3000/products');
+            const products = await res.json();
+            const tbody = document.querySelector('#productTable tbody');
+            tbody.innerHTML = products.map(p => `
+                <tr>
+                    <td>${p.id}</td>
+                    <td>${p.name}</td>
+                    <td>${p.apiUrl}</td>
+                    <td><button onclick="deleteProduct(${p.id})">刪除</button></td>
+                </tr>
+            `).join('');
+        }
+
+        async function addProduct() {
+            const name = document.getElementById('name').value;
+            const apiUrl = document.getElementById('apiUrl').value;
+            await fetch('http://localhost:3000/products', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name, apiUrl})
+            });
+            loadProducts();
+        }
+
+        async function deleteProduct(id) {
+            if (confirm('確定刪除此商品？所有歷史紀錄也會被刪除。')) {
+                await fetch(`http://localhost:3000/products/${id}`, { method: 'DELETE' });
+                loadProducts();
+            }
+        }
+
+        window.onload = loadProducts;
+    </script>
+</body>
+</html>
