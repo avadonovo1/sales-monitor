@@ -19,6 +19,11 @@
   "history": {
     "1": [
       {
+        "total_sold": 76,
+        "delta": 2,
+        "timestamp": "2026-07-12T15:21:58.318Z"
+      },
+      {
         "total_sold": 74,
         "delta": 5,
         "timestamp": "2026-07-12T15:10:27.994Z"
@@ -117,6 +122,11 @@
       }
     ],
     "3": [
+      {
+        "total_sold": 170,
+        "delta": 2,
+        "timestamp": "2026-07-12T15:22:08.623Z"
+      },
       {
         "total_sold": 168,
         "delta": 7,
