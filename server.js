@@ -68,7 +68,7 @@ async function autoUpdateAll() {
     saveData();
 }
 
-setInterval(autoUpdateAll, 10000);
+setInterval(autoUpdateAll, 5000);
 autoUpdateAll();
 
 // API
